@@ -1,0 +1,17 @@
+<h1>Find User By Organization</h1>
+
+
+<%= form_tag("/find_by_org", method: "post") do %>
+
+  <div class="field">
+    <%= label_tag :organization, "Org" %><br>
+    <%= text_field_tag :organization %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Submit" %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>

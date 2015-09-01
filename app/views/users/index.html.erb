@@ -27,3 +27,15 @@
 <br>
 
 <%= link_to 'New User', new_user_path %>
+
+<%= form_tag("/find_by_org", method: "post") do %>
+
+  <div class="field">
+    <%= label_tag :organization, "Org" %><br>
+    <%= text_field_tag :organization %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Submit" %>
+  </div>
+<% end %>
+
