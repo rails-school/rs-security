@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.where(admin: false)
   end
 
   # GET /users/1
@@ -62,8 +62,8 @@ class UsersController < ApplicationController
   end
 
   def find_by_org
-    debugger
     @users = User.where("organization = '#{params[:organization]}'")
+    render 'index'
   end
 
   private
